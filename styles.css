@@ -1,0 +1,129 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3498db;
+    color: #ecf0f1;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #ecf0f1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.choices button {
+    font-size: 3em;
+    margin: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choices button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.choices button:active {
+    transform: scale(0.95);
+}
+
+.choices button i {
+    margin-right: 10px;
+}
+
+.choices button.rock {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.choices button.paper {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.choices button.scissors {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInResult 0.5s ease-in-out 0.5s forwards, bounceResult 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceResult {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+#clash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: #fff;
+    opacity: 0;
+    animation: clashAnimation 0.5s ease-in-out 1.5s forwards;
+}
+
+@keyframes clashAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
